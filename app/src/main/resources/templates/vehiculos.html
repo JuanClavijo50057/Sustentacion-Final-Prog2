@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Libros</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <h2 class="mt-5">Lista de Vehiculos</h2>
+        <table border="3">
+            <thead>
+                <tr>
+                    <th>Marca</th>
+                    <th>Modelo</th>
+                    <th>Año</th>
+                    <th>Color</th>
+                    <th>Precio</th>
+                    <th>Tipo de Vehiculo</th>
+                    <th>Concesionaria</th>
+                    <th>Imagen de la Portada</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="vehiculo : ${vehiculoListAttribute}">
+                    <td th:text="${vehiculo.marca}"></td>
+                    <td th:text="${vehiculo.modelo}"></td>
+                    <td th:text="${vehiculo.año}"></td>
+                    <td th:text="${vehiculo.color}"></td>
+                    <td th:text="${vehiculo.precio}"></td>
+                    <td th:text="${vehiculo.tipo_vehiculo}"></td>
+                    <td th:text="${vehiculo.concesionaria}"></td>
+                    <td th:text="${vehiculo.imagen_cargada}"></td>
+                </tr>
+            </tbody>
+        </table>
+        <nav>
+            <ul>
+                <li><a th:href="@{/}">Principal</a></li>
+            </ul>
+        </nav>
+</body>
+
+</html>
